@@ -1,0 +1,24 @@
+server:
+  port: 8081
+
+#  DB관련 내용 추가
+# database 연동 설정
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    # Database이름 = db_codingrecipe
+    url: jdbc:mysql://localhost:3306/db_codingrecipe?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    # mysql에 생성한 사용자 계정정보
+    username: user_codingrecipe
+    password: 1234
+    thymeleaf:
+    cache: false
+
+  # spring data jpa 설정
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    open-in-view: false
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      # 프로젝트를 실행할때마다 계속 다시 만들어짐! create->update바꿈
